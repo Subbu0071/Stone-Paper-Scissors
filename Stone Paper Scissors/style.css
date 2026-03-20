@@ -1,0 +1,322 @@
+/* ---------- existing styles (kept) ---------- */
+#difficulty-cards .flip-card.selected .flip-card-inner {
+    box-shadow: 0 4px 24px 0 rgba(142,197,252,0.22);
+    border-radius: 1.2rem;
+    transition: box-shadow 0.2s;
+}
+#difficulty-cards .flip-card .flip-card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+#difficulty-cards .flip-card-front, #difficulty-cards .flip-card-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+}
+/* --- Unified World-Class Gradient Styles --- */
+body.enhanced-bg {
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 40%, #f093fb 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    color: #2d2d2d;
+    transition: background 0.4s;
+}
+
+.enhanced-card {
+    background: linear-gradient(120deg, #fff 60%, #e0c3fc 100%);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(12px);
+    border-radius: 2rem;
+    border: 1.5px solid #8ec5fc;
+    max-width: 700px;
+    width: 100%;
+    margin: 2.5rem auto;
+    box-sizing: border-box;
+}
+
+.difficulty-area-enhanced {
+    background: linear-gradient(120deg, #e0c3fc 0%, #f093fb 100%);
+    border-radius: 2.5rem;
+    box-shadow: 0 6px 32px 0 rgba(142,197,252,0.22);
+    padding: 2.2rem 2.5rem 1.5rem 2.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 2.5px solid #8ec5fc;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#difficulty-cards .flip-card-front, #difficulty-cards .flip-card-back {
+    font-size: 15px;
+    border-radius: 1.2rem;
+    background: linear-gradient(120deg, #fff 60%, #e0c3fc 100%);
+    color: #3a2067;
+    font-weight: 700;
+    box-shadow: 0 2px 12px 0 rgba(142,197,252,0.12);
+    word-break: break-word;
+    text-align: center;
+    padding: 0.5em 0.2em;
+}
+#difficulty-cards .flip-card-back {
+    background: linear-gradient(90deg, #8ec5fc 0%, #e0c3fc 100%);
+    color: #fff;
+}
+
+.toggle-switch-diff {
+    width: 140px;
+    height: 48px;
+}
+.toggle-track {
+    height: 20px;
+    background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+    border-radius: 10px;
+}
+.toggle-thumb {
+    width: 32px;
+    height: 32px;
+    top: 8px;
+    left: 8px;
+    background: linear-gradient(120deg, #fff 60%, #e0c3fc 100%);
+    border: 2.5px solid #6f42c1;
+    box-shadow: 0 2px 8px 0 rgba(142,197,252,0.18);
+}
+.toggle-labels span {
+    font-size: 1.7rem;
+    color: #6f42c1;
+    font-weight: 800;
+}
+
+@media (max-width: 600px) {
+    .difficulty-area-enhanced {
+        padding: 1.1rem 0.5rem 0.7rem 0.5rem;
+        max-width: 99vw;
+    }
+    .btn-diff {
+        font-size: 1rem;
+        padding: 0.7em 1.1em;
+    }
+    #difficulty-cards .flip-card {
+        width: 110px;
+        height: 120px;
+        margin: 0 0.7em;
+        transition: width 0.2s;
+    }
+    #difficulty-cards .flip-card-front, #difficulty-cards .flip-card-back {
+        font-size: 1.2rem;
+    }
+    .toggle-switch-diff {
+        width: 90px;
+        height: 36px;
+    }
+    .toggle-thumb {
+        width: 22px;
+        height: 22px;
+        top: 6px;
+        left: 6px;
+    }
+    .toggle-labels span {
+        font-size: 1.1rem;
+    }
+}
+/* --- Difficulty Selector UI Enhancements --- */
+.btn-diff {
+    border-radius: 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.7em 1.5em;
+    background: #fff;
+    color: #232526;
+    border: 2px solid #8ec5fc;
+    box-shadow: 0 2px 12px 0 rgba(142,197,252,0.12);
+    transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+}
+.btn-diff.active, .btn-diff:focus {
+    background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+    color: #6f42c1;
+    border-color: #6f42c1;
+    box-shadow: 0 4px 24px 0 rgba(142,197,252,0.22);
+}
+.btn-diff-easy { border-color: #28a745; }
+.btn-diff-medium { border-color: #ffc107; }
+.btn-diff-hard { border-color: #dc3545; }
+.btn-diff-easy.active { color: #28a745; }
+.btn-diff-medium.active { color: #ffc107; }
+.btn-diff-hard.active { color: #dc3545; }
+
+/* Progress Bar Slider */
+#difficulty-slider {
+    accent-color: #8ec5fc;
+    height: 2px;
+}
+
+/* Stepper */
+#difficulty-stepper {
+    user-select: none;
+}
+.stepper-step {
+    width: 2.2em;
+    height: 2.2em;
+    background: #fff;
+    color: #6f42c1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2em;
+    border: 2px solid #8ec5fc;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.stepper-step.active, .stepper-step:focus {
+    background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+    color: #fff;
+    border-color: #6f42c1;
+}
+.stepper-line {
+    width: 2.5em;
+    height: 0.3em;
+    background: #8ec5fc;
+    border-radius: 0.2em;
+}
+
+/* Card Flip Animation */
+#difficulty-cards {
+    user-select: none;
+}
+.flip-card {
+    background: transparent;
+    width: 80px;
+    height: 100px;
+    perspective: 600px;
+    cursor: pointer;
+    margin: 0 1em;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.flip-card.selected .flip-card-inner,
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 1rem;
+    background: #fff;
+    color: #6f42c1;
+    box-shadow: 0 2px 12px 0 rgba(142,197,252,0.12);
+    font-weight: 700;
+}
+.flip-card-front { z-index: 2; }
+.flip-card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+    color: #fff;
+}
+.flip-card.selected {
+    box-shadow: 0 4px 24px 0 rgba(142,197,252,0.22);
+}
+
+/* Animated Toggle Switch */
+.toggle-switch-diff {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.toggle-range {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+.toggle-track {
+    width: 100%;
+    height: 16px;
+    background: #e0c3fc;
+    border-radius: 8px;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    z-index: 1;
+}
+.toggle-thumb {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px 0 rgba(142,197,252,0.18);
+    transition: left 0.3s;
+    z-index: 3;
+}
+.toggle-labels {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 32px;
+    left: 0;
+    font-size: 1.2rem;
+    color: #6f42c1;
+    z-index: 4;
+}
+
+/* ---------- new CSS for new controls ---------- */
+#mode-select {
+    min-width: 150px;
+}
+#mode-info {
+    white-space: nowrap;
+}
+#timer-display {
+    font-size: 0.9rem;
+    height: 1.1rem;
+}
+.gesture-btn-enhanced.animated {
+    transform: scale(0.96);
+    transition: transform 0.12s;
+}
+#player-choice.animated, #computer-choice.animated {
+    transform: translateY(-6px);
+    transition: transform 0.12s;
+}
+.undo-disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* small screen tweaks */
+@media (max-width: 480px) {
+    .display-3 { font-size: 1.8rem; }
+    .enhanced-card { padding: 1rem; }
+    .gesture-btn-enhanced { padding: 0.6rem 1rem; font-size: 1.1rem; }
+}
